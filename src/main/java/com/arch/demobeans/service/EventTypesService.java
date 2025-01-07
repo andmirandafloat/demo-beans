@@ -23,7 +23,7 @@ public class EventTypesService {
   private static final Logger log = LoggerFactory.getLogger(EventTypesService.class);
   private final EventTypesRepository eventTypesRepository;
 
-  @CacheEvict(value = "eventTypes", allEntries = true)
+  @CacheEvict(value = {"eventTypes", "event-types"}, allEntries = true)
   public EventTypesResponse create(EventTypesRequest eventTypesRequest) {
     log.info("EventTypesRequest: {}", eventTypesRequest);
     EventTypesEntity entity = new EventTypesEntity();

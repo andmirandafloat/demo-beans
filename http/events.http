@@ -1,0 +1,13 @@
+### get events
+GET http://localhost:8091/events
+
+### create event
+POST http://localhost:8091/events
+Content-Type: application/json
+
+{
+  "name": "new one",
+  "nameInEnglish": "new one",
+  "disclaimerMsg": "new one",
+  "enabled": false
+}
