@@ -1,0 +1,340 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0004
+      author: aperdomoc@liverpool.com.mx
+      changes:
+        - createTable:
+            tableName: event_types
+            columns:
+              - column:
+                  name: event_type_id
+                  type: smallserial
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name_in_english
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: disclaimer_msg
+                  type: text
+              - column:
+                  name: enabled
+                  type: boolean
+                  constraints:
+                    nullable: false
+                    defaultValueBoolean: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: version
+                  type: smallint
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: 0005
+      author: aperdomoc@liverpool.com.mx
+      changes:
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Boda"
+              - column:
+                  name: name_in_english
+                  value: "Wedding"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Bebé"
+              - column:
+                  name: name_in_english
+                  value: "Baby"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "XV años"
+              - column:
+                  name: name_in_english
+                  value: "Sweet Fifteen"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Bar Mitzvah"
+              - column:
+                  name: name_in_english
+                  value: "Bar Mitzvah"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Bat Mitzvah"
+              - column:
+                  name: name_in_english
+                  value: "Bat Mitzvah"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Bautizo"
+              - column:
+                  name: name_in_english
+                  value: "Christening"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Primera Comunión"
+              - column:
+                  name: name_in_english
+                  value: "First Communion"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Confirmación"
+              - column:
+                  name: name_in_english
+                  value: "Confirmation"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Otras Ceremonias Religiosas"
+              - column:
+                  name: name_in_english
+                  value: "Other Religious Ceremonies"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Fiesta/Reunión"
+              - column:
+                  name: name_in_english
+                  value: "Party/Meeting"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Fiesta Infantil"
+              - column:
+                  name: name_in_english
+                  value: "Children Party"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Cumpleaños"
+              - column:
+                  name: name_in_english
+                  value: "Birthday"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Despedida"
+              - column:
+                  name: name_in_english
+                  value: "Bachelor"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Open House"
+              - column:
+                  name: name_in_english
+                  value: "Open House"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Aniversario"
+              - column:
+                  name: name_in_english
+                  value: "Anniversary"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Otros"
+              - column:
+                  name: name_in_english
+                  value: "Others"
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
+        - insert:
+            tableName: event_types
+            columns:
+              - column:
+                  name: name
+                  value: "Mascotas"
+              - column:
+                  name: name_in_english
+                  value: "Pets Ceremonies"
+              - column:
+                  name: disclaimer_msg
+                  value: "Debes de ser mayor de edad para crear una mesa de regalos. Si no lo eres pide a un adulto que cree el evento."
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: version
+                  valueNumeric: 1
